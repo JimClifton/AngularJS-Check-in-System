@@ -1,0 +1,51 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+@import 'base/base.scss';
+@import 'base/layout.scss';
+@import 'base/text.scss';
+@import 'base/links.scss';
+@import 'base/forms.scss';
+
+@import 'components/header.scss';
+@import 'components/user-list.scss';
+@import 'components/message.scss';
+
+
+/**
+ * Delete Mode
+ */
+
+.delete-message {
+    background: $dark-1;
+    border-radius: 2px;
+    float: left;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    position: relative;
+    width: 100%;
+
+    &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent $dark-1 transparent;
+        position: absolute;
+        top: -10px;
+        right: 25px;
+    }
+
+    &__heading {
+        float: left;
+        margin-right: 20px;
+        padding: 10px 0;
+    }
+
+    &__btn {
+        margin-left: 10px;
+        padding: 8px 15px;
+    }
+}
+

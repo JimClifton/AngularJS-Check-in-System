@@ -1,0 +1,15 @@
+{
+  "name": "checkin-system",
+  "version": "0.0.1",
+  "authors": [
+    "James Clifton <spengos@gmail.com>"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.5",
+    "angular-route": "~1.3.5",
+    "fastclick": "~1.0.3",
+    "moment": "~2.8.4",
+    "ngstorage": "~0.3.0",
+    "angular-touch": "~1.3.11"
+  }
+}

@@ -1,0 +1,30 @@
+/**
+ * Variables
+ */
+
+$grid-gutter: 20px;
+
+$white:         #FFFFFF;
+$black:         #000000;
+$dark-1:        #3E3C3D;
+$dark-2:        #252525;
+$dark-3:        #1F1D20;
+$grey-1:        #454444;
+$grey-2:        #949494;
+$grey-3:        #525151;
+$pri:           #93c716;
+$pri-alt:       #a1d918;
+$red-1:         #CE1724;
+
+$font-size:     18px;
+$line-height:   1.4em;
+$type-scale:    1.200;
+
+$mq-medium:     62.5em;
+
+$zeta:          $font-size;
+$epsilon:       $zeta        *   $type-scale;
+$delta:         $epsilon     *   $type-scale;
+$gamma:         $delta       *   $type-scale;
+$beta:          $gamma       *   $type-scale;
+$alpha:         $beta        *   $type-scale;

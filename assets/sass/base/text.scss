@@ -1,0 +1,42 @@
+/**
+ * Headings
+ */
+
+h1,
+.alpha {
+    @include heading-font-size($alpha);
+}
+
+h2,
+.beta {
+    @include heading-font-size($beta);
+}
+
+h3,
+.gamma {
+    @include heading-font-size($gamma);
+}
+
+h4,
+.delta {
+    @include heading-font-size($delta);
+}
+
+h5,
+.epsilon {
+    @include heading-font-size($epsilon);
+}
+
+h6,
+.zeta {
+    @include heading-font-size($zeta);
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+	margin-top: $line-height / 2;
+}

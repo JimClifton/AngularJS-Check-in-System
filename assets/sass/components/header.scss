@@ -1,0 +1,58 @@
+/**
+ * Header
+ */
+
+.logo {
+    float: left;
+    height: 50px;
+    padding: 5px 0;
+
+    &--link {
+        float: left;
+    }
+}
+
+.page-header {
+    &--fixed {
+        background: $dark-3;
+        border-bottom: solid 1px rgba(246, 246, 246, 0.1);
+        left: 0;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    &__heading {
+        font-size: 22px;
+        float: left;
+        padding: 14px 10px;
+    }
+
+    &__btn {
+        float: right;
+        padding: 11px 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .site-width {
+        padding: 0 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .page-header__heading {
+        font-size: 18px;
+        padding: 11px 10px;
+    }
+
+    .page-header__btn {
+        padding: 6px 10px;
+    }
+
+}

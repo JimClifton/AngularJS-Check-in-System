@@ -1,0 +1,111 @@
+/**
+ * Mixins
+ */
+
+ @mixin respond-min($width) {
+     @if $fixed-width and $fixed-width >= $width {
+         @content;
+     }
+     @else {
+         .enhanced {
+             @media (min-width: $width) {
+                 @content;
+             }
+         }
+     }
+ }
+
+ @mixin respond-max($width) {
+     $width: $width - em( 1px, $font-size ); // Remove 1px
+
+     @media (max-width: $width) {
+         @content;
+     }
+ }
+
+ @mixin respond-min-max($min, $max) {
+     $max: $max - em( 1px , $base-font-size ); // Remove 1px
+
+     @if $fixed-width and $fixed-width >= $min and $fixed-width <= $max {
+         @content;
+     }
+     @else {
+         @media (min-width: $min) and (max-width: $max) {
+             @content;
+         }
+     }
+ }
+
+ @mixin clearfix {
+     &:after {
+         content: '';
+         display: table;
+         clear: both;
+     }
+ }
+
+ @mixin heading-font-size( $font-size ) {
+    font-size: $font-size;
+    line-height: 1;
+    margin: 0;
+    //margin: $font-size * 2 0 0;
+    //padding-bottom: $font-size / 2;
+ }
+
+ /**
+  * inline block with ie7 hack
+  */
+ @mixin inline-block {
+     display: inline-block;
+     zoom: 1;
+     *display: inline; // lt-ie7
+ }
+
+ /**
+  * Grid Mixins
+  */
+ /*
+   example usage:
+
+    <article class="main__news">
+        <div class="main__news__content">
+        </div>
+        <aside class="main__news__related"></aside>
+    </article>
+
+     .main__news {
+         @include grid-row;
+     }
+     .main__news__content {
+         @include grid-col( 60% );
+     }
+     .main__news__related {
+         @include grid-col( 40% );
+     }
+
+  */
+
+
+ /**
+  * Used to remove first column's padding
+  *
+  * @param {metric} $grid-gutter - scoped override of global
+  */
+ @mixin grid-row( $grid-gutter:$grid-gutter ) {
+     margin-left: -$grid-gutter;
+ }
+
+ /**
+  * Grid column of $width
+  * allows for grid sizes entirely disconnected from markup
+  *
+  * @param {metric} $width - width of column ( usually percentage )
+  * @param {metric} $grid-gutter - scoped override of global
+  */
+ @mixin grid-col($width, $grid-gutter:$grid-gutter ) {
+     @include inline-block;
+     vertical-align: top;
+     padding-left: $grid-gutter;
+     margin-right: -0.25em; // Counteract inline-block spacing
+     width: $width;
+ }

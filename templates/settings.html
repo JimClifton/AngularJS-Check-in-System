@@ -1,0 +1,30 @@
+<div ng-init="updateTimeout()">
+	<header class="page-header page-header--fixed">
+
+		<div class="site-width">
+			<a href="#index" class="logo--link">
+				<img src="assets/img/ridgeway-logo.svg" class="logo" alt="Ridgeway">
+			</a>
+			<h1 class="page-header__heading epsilon">Settings</h1>
+			<a href="#admin" class="btn btn--secondary page-header__btn">Back</a>
+		</div>
+
+	</header>
+
+	<main class="main-content">
+
+		<div class="message message--success" ng-show="success">
+			<p>You have successfully updated the settings.</p>
+		</div>
+		
+		<form name="" ng-submit="changeTimeout()">
+			<div class="form__field form__field--wide">
+				<label for="current-password" class="label">Return to home screen timeout (seconds)</label>
+				<input type="number" class="input" ng-init="getTimeout()" id="timeout" ng-model="timeout">
+			</div>
+
+			<button type="submit" class="btn btn--primary">Change Timeout</button>
+		</form>
+		
+	</main>
+</div>

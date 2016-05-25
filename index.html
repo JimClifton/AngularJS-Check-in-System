@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.appcache">
+	<head>
+		<meta charset="UTF-8">
+		<title>Welcome</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="assets/build/css/style.css">
+		<link rel="stylesheet" href="assets/build/css/print.css" media="print">
+	</head>
+
+	<body ng-app="CheckinSystem">
+		<div class="site-width" ng-view></div>
+
+		<script src="assets/bower_components/angular/angular.min.js"></script>
+		<script src="assets/bower_components/ngstorage/ngStorage.min.js"></script>
+		<script src="assets/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="assets/bower_components/angular-touch/angular-touch.min.js"></script>
+		<script src="assets/bower_components/fastclick/lib/fastclick.js"></script>
+		<script src="assets/bower_components/moment/moment.js"></script>
+
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/services/checkinApi.js"></script>
+		<script src="assets/js/controllers/checkinCtrl.js"></script>
+		<script src="assets/js/controllers/loginCtrl.js"></script>
+		<script src="assets/js/controllers/settingsCtrl.js"></script>
+		<script src="assets/js/controllers/passwordCtrl.js"></script>
+		<script src="assets/js/directives/checkinToggle.js"></script>
+	</body>
+</html>

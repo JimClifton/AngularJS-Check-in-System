@@ -1,0 +1,47 @@
+<div>
+	<header class="page-header page-header--fixed">
+
+		<div class="site-width">
+			<a href="#index" class="logo--link">
+				<img src="assets/img/ridgeway-logo.svg" class="logo" alt="Ridgeway">
+			</a>
+			<h1 class="page-header__heading epsilon">Full List</h1>
+			<a href="#index" class="btn btn--secondary page-header__btn">Back</a>
+		</div>
+
+	</header>
+
+	<main class="main-content">
+		
+		<ul class="user__list">
+			<li class="user__item user__item--header"><h4>Staff</h4></li>
+			<li class="user__item" ng-repeat="person in $storage.staff | orderBy:'name'">
+				<input class="user__checkbox" type="checkbox" id="{{ person.id }}" ng-model="person.status" disabled>
+
+				<div class="user__label" ng-model="userLabel" for="{{ person.id }}" swipe-in-out>
+		  			<span class="user__name"> 
+		  				{{ person.name }}
+		  			</span>
+		  			<div class="userOn"></div>
+		  		</div>
+
+			</li>
+		</ul>
+
+		<ul class="user__list">
+			<li class="user__item user__item--header"><h4>Visitor</h4></li>
+			<li class="user__item" ng-repeat="person in $storage.visitor | orderBy:'name' | filter: { status: 1 }">
+				<input class="user__checkbox" type="checkbox" id="{{ person.id }}" ng-model="person.status" disabled>
+
+				<div class="user__label" ng-model="userLabel" for="{{ person.id }}" swipe-in-out>
+		  			<span class="user__name"> 
+		  				{{ person.name }}
+		  			</span>
+		  			<div class="userOn"></div>
+		  		</div>
+
+			</li>
+		</ul>
+		
+	</main>
+</div>

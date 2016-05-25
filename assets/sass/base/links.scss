@@ -1,0 +1,72 @@
+/**
+ * Buttons
+ */
+
+a {
+    color: $pri;
+}
+
+.btn {
+    border-radius: 2px;
+    display: inline-block;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.btn--primary {
+    background: $pri;
+    color: $dark-2;
+
+    &:hover {
+        background: $pri-alt;
+    }
+}
+
+.btn--secondary {
+    background: $grey-1;
+    color: $grey-2;
+
+    &:hover {
+        background: $grey-3;
+    }
+}
+
+.btn--secondary--alt {
+    background: $grey-2;
+    color: $grey-1;
+}
+
+.btn--large {
+    padding: 20px 25px;
+}
+
+.btns-large {
+    @include grid-row;
+    margin-bottom: 20px;
+
+    .btn {
+        font-weight: bold;
+        padding: 100px 20px;
+        width: 100%;
+    }
+}
+
+.btns-large__small-text {
+    display: block;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.btns-large--two {
+    .btns-large__col {
+       @include grid-col( 50% );
+    }
+}
+
+.btns-large--three {
+    .btns-large__col {
+        @include grid-col( 33.3333333333% );
+    }
+}

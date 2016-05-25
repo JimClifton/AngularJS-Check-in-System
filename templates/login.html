@@ -1,0 +1,28 @@
+<header class="page-header page-header--fixed">
+
+	<div class="site-width">
+		<a href="#index" class="logo--link">
+			<img src="assets/img/ridgeway-logo.svg" class="logo" alt="Ridgeway">
+		</a>
+		<h1 class="page-header__heading epsilon">Admin Login</h1>
+		<a href="#index" class="btn btn--secondary page-header__btn">Back</a>
+	</div>
+
+</header>
+
+<main class="main-content">
+
+	<div class="message message--error" ng-show="error">
+		<p>The password you have entered is incorrect.</p>
+	</div>
+
+	<form name="" ng-submit="adminLogin()">
+		<label for="password" class="label">Enter Password</label>
+
+		<div class="form__field form__field--wide">
+			<input type="password" class="input input--password" id="password" ng-model="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+			<button type="submit" class="btn btn--primary">Login</button>
+		</div>
+	</form>
+
+</main>

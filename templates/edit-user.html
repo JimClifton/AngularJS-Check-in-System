@@ -1,0 +1,80 @@
+<header class="page-header page-header--fixed">
+
+	<div class="site-width">
+		<a href="#index" class="logo--link">
+			<img src="assets/img/ridgeway-logo.svg" class="logo" alt="Ridgeway">
+		</a>
+		<h1 class="page-header__heading epsilon">Edit Users</h1>
+		<a href="#admin" class="btn btn--secondary page-header__btn">Back</a>
+	</div>
+
+</header>
+
+<main class="main-content">
+	
+	<div class="add-new-user">
+		<form name="searchForm">
+			<div class="form__field form__field--wide">
+				<input type="text" class="input" ng-model="person.name" ng-model-instant placeholder="Enter staff name" autocorrect="off" autocomplete="off">
+				<button type="submit" class="btn btn--primary" ng-click="addStaff( person )">Add</button>
+			</div>
+		</form>
+	</div>
+	
+	<ul class="user__list user__list--edit">
+		<li class="user__item user__item--header">
+			<span class="user__col user__col--large"><h4>Staff</h4></span>
+		</li>
+		<li class="user__item" ng-repeat="person in filterStaff = (staff | filter: person.name | orderBy:'name')">
+			<div class="user__label user__label--read-only" ng-hide="editMode">
+				<span class="user__col user__col--large">
+					{{ person.name }}
+				</span>
+				<span class="user__col user__col--small">
+					<button class="btn btn--primary" ng-click="editMode = !editMode">Edit</button>
+					<button class="btn btn--secondary--alt" ng-click="deleteUser( person )">Remove</button>
+				</span>
+			</div>
+
+			<div class="user__label user__label--edit" ng-show="editMode">
+				<form name="" ng-submit="updateStaff( person )">
+					<span class="user__col user__col--large form__field--wide">
+						<input type="text" class="input" ng-model="person.name" value="{{ person.name }}" autocorrect="off" autocomplete="off">
+					</span>
+					<span class="user__col user__col--small">
+						<button type="submit" class="btn btn--primary" ng-click="editMode = !editMode">Save</button>
+					</span>
+				</form>
+			</div>
+		</li>
+	</ul>
+
+	<ul class="user__list user__list--edit">
+		<li class="user__item user__item--header">
+			<span class="user__col user__col--large"><h4>Visitor</h4></span>
+		</li>
+		<li class="user__item" ng-repeat="person in visitor | orderBy:'name'">
+			<div class="user__label user__label--read-only" ng-hide="editMode">
+				<span class="user__col user__col--large">
+					{{ person.name }}
+				</span>
+				<span class="user__col user__col--small">
+					<button class="btn btn--primary" ng-click="editMode = !editMode">Edit</button>
+					<button class="btn btn--secondary--alt" ng-click="deleteUser( person )">Remove</button>
+				</span>
+			</div>
+
+			<div class="user__label user__label--edit" ng-show="editMode">
+				<form name="" ng-submit="updateVisitor( person )">
+					<span class="user__col user__col--large form__field--wide">
+						<input type="text" class="input" ng-model="person.name" value="{{ person.name }}" autocorrect="off" autocomplete="off">
+					</span>
+					<span class="user__col user__col--small">
+						<button type="submit" class="btn btn--primary" ng-click="editMode = !editMode">Save</button>
+					</span>
+				</form>
+			</div>
+		</li>
+	</ul>
+	
+</main>

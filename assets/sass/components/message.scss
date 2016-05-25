@@ -1,0 +1,25 @@
+/**
+ * Message
+ */
+
+.message {
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+
+    p {
+        margin: 0;
+    }
+
+    h5 + p {
+    	margin-top: $line-height / 2;
+    }
+}
+
+.message--error {
+    background: #E74D58;
+}
+
+.message--success {
+    background: $pri;
+}

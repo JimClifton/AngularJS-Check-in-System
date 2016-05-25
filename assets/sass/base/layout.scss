@@ -1,0 +1,14 @@
+/**
+ * Layout
+ */
+
+.site-width {
+    @include clearfix;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.main-content {
+    padding-top: 40px;
+}

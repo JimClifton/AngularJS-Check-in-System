@@ -1,0 +1,45 @@
+<div id="staff">
+	<div id="redirectEvents">
+		<header class="page-header page-header--fixed">
+
+			<div class="site-width">
+				<a href="#index" class="logo--link">
+					<img src="assets/img/ridgeway-logo.svg" class="logo" alt="Ridgeway">
+				</a>
+				<h1 class="page-header__heading epsilon">Staff Sign In</h1>
+				<a href="#index" class="btn btn--secondary page-header__btn">Back</a>
+			</div>
+
+		</header>
+
+		<main class="main-content">
+			
+			<div class="add-new-user">
+				<form name="searchForm">
+					<div class="form__field form__field--wide">
+						<input type="text" class="input" ng-model="person.name" ng-model-instant placeholder="Search name" autocorrect="off" autocomplete="off">
+					</div>
+				</form>
+			</div>
+
+			<div class="message message--error" ng-show="offline">
+				<p>You are not connected to the internet. Please connect to the internet to sign in/out.</p>
+			</div>
+
+			<ul class="user__list">
+				<li class="user__item" ng-repeat="person in filterStaff = ($storage.staff | filter: person.name | orderBy:'name')">
+					<input class="user__checkbox" type="checkbox" id="{{ person.id }}" ng-model="person.status" ng-true-value="1" ng-false-value="0" ng-change="updateStaff( person )">
+					<div class="user__label" ng-model="userLabel" for="{{ person.id }}">
+			  			<span class="user__name">
+			  				{{ person.name }}
+			  			</span>
+			  			<span class="switch-wrapper" toggle-in-out>
+							<div class="userOn"></div>
+						</span>
+			  		</div>
+				</li>
+			</ul>
+
+		</main>
+	</div>
+</div>

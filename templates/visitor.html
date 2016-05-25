@@ -1,0 +1,51 @@
+<div ng-init="autoDeleteVisitor()" id="visitor">
+	<div id="redirectEvents">
+		<header class="page-header page-header--fixed">
+
+			<div class="site-width">
+				<a href="#index" class="logo--link">
+					<img src="assets/img/ridgeway-logo.svg" class="logo" alt="Ridgeway">
+				</a>
+				<h1 class="page-header__heading epsilon">Visitor Sign In</h1>
+				<a href="#index" class="btn btn--secondary page-header__btn">Back</a>
+			</div>
+
+		</header>
+
+		<main class="main-content">
+
+			<div class="message">
+				<h5>Welcome to Ridgeway.</h5>
+				<p>Please toggle the switch next to your name to sign in, also make sure to familiarise yourself with the location of our fire exits. If the fire alarm sounds, please make your way to the nearest exit and meet at our assembly point in the car park.</p>
+			</div>
+			
+			<div class="add-new-user">
+				<form name="searchForm">
+					<div class="form__field form__field--wide">
+						<input type="text" class="input" ng-model="person.name" ng-model-instant placeholder="Enter name" autocorrect="off" autocomplete="off">
+						<button type="submit" class="btn btn--primary" ng-click="addVisitor( person )">Add</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="message message--error" ng-show="offline">
+				<p>You are not connected to the internet. Please connect to the internet to sign in/out.</p>
+			</div>
+
+			<ul class="user__list" id="userList">
+				<li class="user__item" ng-repeat="person in filterVisitor = ($storage.visitor | filter: person.name | orderBy:'name')">
+					<input class="user__checkbox" type="checkbox" id="{{ person.id }}" ng-model="person.status" ng-true-value="1" ng-false-value="0" ng-change="updateVisitor( person )">
+					<div class="user__label" ng-model="userLabel" for="{{ person.id }}">
+			  			<span class="user__name"> 
+			  				{{ person.name }}
+			  			</span>
+			  			<span class="switch-wrapper" toggle-in-out>
+							<div class="userOn"></div>
+						</span>
+			  		</div>
+				</li>
+			</ul>
+
+		</main>
+	</div>
+</div>

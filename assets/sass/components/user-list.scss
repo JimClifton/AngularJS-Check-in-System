@@ -1,0 +1,202 @@
+/**
+ * User List
+ */
+
+.user__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user__item {
+    @include clearfix;
+}
+
+.user__item--header {
+    padding: 10px;
+
+    .user__col--small {
+        float: right;
+    }
+}
+
+.user__label {
+    background: #333;
+    border-radius: 2px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 20px 16px;
+    position: relative;
+    text-transform: capitalize;
+    transition: color .2s;
+
+    // Stop text from being highlighted as it was preventing click event
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .switch-wrapper {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        height: 36px;
+        width: 100px;
+        line-height: 36px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: $pri;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 2px;
+        overflow: hidden;
+
+        &:before,
+        &:after {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            transition: transform 0.2s ease;
+        }
+
+        &:before {
+            background: #888;
+            content: "Out";
+            right: 0;
+            color: #555;
+        }
+
+        &:after {
+            content: "In";
+            left: 0;
+            color: $white;
+            background: $pri;
+        }
+    }
+
+    .userOn {
+        background: #666;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 50px;
+        position: absolute;
+        top: 0;
+        width: 50px;
+        z-index: 2;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        -webkit-transition: transform 0.2s ease;
+        transition: transform 0.2s ease;
+    }
+}
+
+.user__label--read-only {
+    padding: 8px 8px 8px 16px;
+}
+
+.user__label--edit {
+    padding: 8px;
+
+    .user__col--large {
+        padding: 0;
+        width: 80%;
+    }
+
+    .btn {
+        padding: 14px 16px;
+    }
+}
+
+.user__col {
+    float: left;
+}
+
+.user__col--small {
+    float: right;
+
+    .btn {
+        margin-left: 8px;
+    }
+}
+
+.user__col--large {
+    padding: 8px 0 8px 3px; // "user-select" styling cut text off by 3px
+}
+
+.user__name {
+    padding-left: 3px; // "user-select" styling cut text off by 3px
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.user__checkbox {
+    display: none;
+}
+
+.user__checbox:checked {
+    display: block;
+}
+
+.userOn {
+    transition: background .2s;
+}
+
+.user__label.is-signed-out {
+    color: #999;
+
+    .userOn {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    .switch-wrapper:after {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    .switch-wrapper:before {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.user__label.is-signed-in {
+    color: $white;
+    background: #3E3C3D;
+
+    .userOn {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .switch-wrapper:after {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .switch-wrapper:before {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+}
+
+.is-signing-in-out {
+    color: $white;
+
+    .userOn {
+        background: rgba( 255, 255, 255, .1 );
+    }
+}
+
+
+.add-new-user {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,54 @@
+/**
+ * Form
+ */
+
+form {
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form__field {
+    position: relative;
+}
+
+.form__field + .form__field {
+    margin-top: 20px;
+}
+
+.form__field + .btn {
+    margin-top: 30px;
+}
+
+.form__field--wide {
+    .input {
+        border-radius: 2px;
+        border: 2px solid transparent;
+        color: $black;
+        outline: none;
+        margin: 0;
+        padding: 12px 82px 12px 10px;
+        text-transform: capitalize;
+        transition: border .3s;
+        width: 100%;
+
+        &:focus {
+            border-color: $pri;
+        }
+    }
+
+    .input--password {
+        text-transform: none;
+    }
+
+    .btn {
+        border-radius: 0 2px 2px 0;
+        padding: 14px 16px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
