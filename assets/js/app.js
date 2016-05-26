@@ -67,7 +67,7 @@ angular.module( 'CheckinSystem', [ 'ngRoute', 'ngStorage' ] )
 
     }]);
 
-
+/* Temp code to check if user is logged in */
 var checkAuth = function( $q, $rootScope, $location, $window ) {
     var defer = $q.defer();
 
